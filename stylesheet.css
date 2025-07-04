@@ -1,0 +1,197 @@
+:root {
+  --peach: #FFDAB9;
+  --peach-light: #FFE4B5;
+  --peach-soft: #FFEFD5;
+  --black: #000;
+}
+
+body {
+  background-color: var(--black);
+  transition: background-color linear 5s;
+  overflow-x: hidden;
+}
+
+.container {
+  display: none;
+}
+
+.peach {
+  background-color: var(--peach);
+}
+
+.peach-after {
+  animation: peach_alive 8s linear infinite;
+}
+
+@keyframes peach_alive {
+  0%, 50%, 100% { background-color: var(--peach); }
+  25% { background-color: var(--peach-light); }
+  75% { background-color: var(--peach-soft); }
+}
+
+.bulb {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bulb-holder {
+  height: 70px;
+}
+
+.bulb-glow-yellow { animation: bulb_glow_yellow 5s linear forwards; }
+.bulb-glow-red    { animation: bulb_glow_red 5s linear forwards; }
+.bulb-glow-blue   { animation: bulb_glow_blue 5s linear forwards; }
+.bulb-glow-green  { animation: bulb_glow_green 5s linear forwards; }
+.bulb-glow-pink   { animation: bulb_glow_pink 5s linear forwards; }
+.bulb-glow-orange { animation: bulb_glow_orange 5s linear forwards; }
+
+/* Shared bulb glow animation structure */
+@keyframes bulb_glow_yellow { 0% { background-image: url('bulb.png'); opacity: 0; } 50% { opacity: 1; } 100% { background-image: url('bulb_yellow.png'); opacity: 1; } }
+@keyframes bulb_glow_red    { 0% { background-image: url('bulb.png'); opacity: 0; } 50% { opacity: 1; } 100% { background-image: url('bulb_red.png');    opacity: 1; } }
+@keyframes bulb_glow_blue   { 0% { background-image: url('bulb.png'); opacity: 0; } 50% { opacity: 1; } 100% { background-image: url('bulb_blue.png');   opacity: 1; } }
+@keyframes bulb_glow_green  { 0% { background-image: url('bulb.png'); opacity: 0; } 50% { opacity: 1; } 100% { background-image: url('bulb_green.png');  opacity: 1; } }
+@keyframes bulb_glow_pink   { 0% { background-image: url('bulb.png'); opacity: 0; } 50% { opacity: 1; } 100% { background-image: url('bulb_pink.png');   opacity: 1; } }
+@keyframes bulb_glow_orange { 0% { background-image: url('bulb.png'); opacity: 0; } 50% { opacity: 1; } 100% { background-image: url('bulb_orange.png'); opacity: 1; } }
+
+/* After Music Glows */
+.bulb-glow-yellow-after { animation: bulb_after_yellow 1s linear infinite; }
+.bulb-glow-red-after    { animation: bulb_after_red 1.2s linear infinite; }
+.bulb-glow-blue-after   { animation: bulb_after_blue 1.4s linear infinite; }
+.bulb-glow-green-after  { animation: bulb_after_green 1.8s linear infinite; }
+.bulb-glow-pink-after   { animation: bulb_after_pink 2s linear infinite; }
+.bulb-glow-orange-after { animation: bulb_after_orange 2.2s linear infinite; }
+
+@keyframes bulb_after_yellow { 0%, 100% { background-image: url('bulb.png'); } 50% { background-image: url('bulb_yellow.png'); } }
+@keyframes bulb_after_red    { 0%, 100% { background-image: url('bulb.png'); } 50% { background-image: url('bulb_red.png'); } }
+@keyframes bulb_after_blue   { 0%, 100% { background-image: url('bulb.png'); } 50% { background-image: url('bulb_blue.png'); } }
+@keyframes bulb_after_green  { 0%, 100% { background-image: url('bulb.png'); } 50% { background-image: url('bulb_green.png'); } }
+@keyframes bulb_after_pink   { 0%, 100% { background-image: url('bulb.png'); } 50% { background-image: url('bulb_pink.png'); } }
+@keyframes bulb_after_orange { 0%, 100% { background-image: url('bulb.png'); } 50% { background-image: url('bulb_orange.png'); } }
+
+audio {
+  display: none;
+}
+
+/* Banner Animation */
+.bannar {
+  max-width: 100%;
+  transform: translateY(-500px);
+}
+
+.bannar-come {
+  animation: bannar_come 6s linear forwards;
+}
+
+@keyframes bannar_come {
+  0%   { transform: translateY(-1000px); }
+  33%  { transform: translateY(0) rotate(10deg); }
+  66%  { transform: translateY(100px) rotate(-10deg); }
+  100% { transform: translateY(0); }
+}
+
+/* Balloons */
+.balloons {
+  position: fixed;
+  bottom: -200px;
+  opacity: 0.6;
+  z-index: 99;
+  width: 100px;
+  height: 183px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.balloons h2 {
+  font-size: 50px;
+  font-family: 'Signika', sans-serif;
+  text-transform: uppercase;
+  color: #BF4136;
+  text-shadow: 5px 5px 5px #FFF;
+  display: none;
+}
+
+#b1, #b11 { background-image: url('b1.png'); }
+#b2, #b22 { background-image: url('b2.png'); }
+#b3, #b33 { background-image: url('b3.png'); }
+#b4, #b44 { background-image: url('b4.png'); }
+#b5, #b55 { background-image: url('b5.png'); }
+#b6, #b66 { background-image: url('b6.png'); }
+#b7, #b77 { background-image: url('b7.png'); }
+
+.balloons-rotate-behaviour-one {
+  animation: balloons_rotate_one 10s linear infinite;
+}
+
+.balloons-rotate-behaviour-two {
+  animation: balloons_rotate_two 10s linear infinite;
+}
+
+@keyframes balloons_rotate_one {
+  0%, 100% { transform: rotate(30deg); }
+  50%      { transform: rotate(-30deg); }
+}
+
+@keyframes balloons_rotate_two {
+  0%, 100% { transform: rotate(-20deg); }
+  50%      { transform: rotate(20deg); }
+}
+
+.balloon-border {
+  position: fixed;
+  top: 100%;
+  opacity: 0.5;
+  z-index: 9999;
+}
+
+.control-panel {
+  position: fixed;
+  bottom: 0;
+  padding: 10px 0;
+}
+
+#play, #bannar_coming, #balloons_flying, #cake_fadein, #light_candle, #wish_message, #story {
+  display: none;
+}
+
+.cake-cover {
+  margin-top: 50px;
+}
+
+.message {
+  margin-top: 200px;
+  display: none;
+}
+
+.message p {
+  font-size: 30px;
+  font-family: 'Signika', sans-serif;
+  text-transform: uppercase;
+  color: #C4515C;
+  text-shadow: 2px 2px 2px #FFF;
+  font-weight: bold;
+  display: none;
+}
+
+.btn-primary {
+  background-color: #466baf;
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: 'Signika', sans-serif;
+  font-weight: 700;
+  border-color: #466baf;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: #466baf;
+  color: #fff;
+  border-color: #fff;
+}
